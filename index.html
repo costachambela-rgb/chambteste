@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Troca de Imagem Atual</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .img-btn {
+      border: none;
+      background: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    img {
+      width: 100%;
+      max-height: 140px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    img:hover {
+      transform: scale(1.05);
+      border-color: #333;
+    }
+    .titulo {
+      margin-bottom: 30px;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">Clique na imagem que deseja tornar ativa</div>
+  <div class="galeria">
+    <!-- Bloco gerado automaticamente -->
+    <!-- Imagens de 01 até 72 -->
+    <!-- Cada link leva ao GitHub para editar imagem-atual.jpg -->
+    <!-- O nome da imagem escolhida vai como filename=imagemXX.jpg -->
+    
+    <!-- Inicio do loop -->
+    <!-- Os links devem abrir em nova aba -->
+    <!-- Substitua a URL base do repositório conforme desejar -->
+    <!-- Neste caso: costachambela-rgb/chambteste -->
+
+    <!-- Gerado em JS (exemplo abaixo é hardcoded) -->
+    <!-- Abaixo, imagens de 1 a 72 -->
+    <!-- Estas linhas foram geradas automaticamente -->
+    <!-- Início -->
+    
+    <!-- Gera com JS -->
+    <script>
+      const repoEditBase = "https://github.com/costachambela-rgb/chambteste/edit/main/imagem-atual.jpg?filename=";
+      const imageBase = "https://costachambela-rgb.github.io/chambteste/";
+      const container = document.currentScript.parentElement;
+
+      for (let i = 1; i <= 72; i++) {
+        const num = String(i).padStart(2, '0');
+        const imgName = `imagem${num}.jpg`;
+
+        const a = document.createElement('a');
+        a.className = 'img-btn';
+        a.href = repoEditBase + imgName;
+        a.target = '_blank';
+
+        const img = document.createElement('img');
+        img.src = imageBase + imgName;
+        img.alt = `Imagem ${num}`;
+
+        a.appendChild(img);
+        container.querySelector('.galeria').appendChild(a);
+      }
+    </script>
+
+    <!-- Fim -->
+  </div>
+</body>
+</html>
