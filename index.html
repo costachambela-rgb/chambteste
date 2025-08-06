@@ -42,47 +42,29 @@
 </head>
 <body>
   <div class="titulo">Clique na imagem que deseja tornar ativa</div>
-  <div class="galeria">
-    <!-- Bloco gerado automaticamente -->
-    <!-- Imagens de 01 até 72 -->
-    <!-- Cada link leva ao GitHub para editar imagem-atual.jpg -->
-    <!-- O nome da imagem escolhida vai como filename=imagemXX.jpg -->
-    
-    <!-- Inicio do loop -->
-    <!-- Os links devem abrir em nova aba -->
-    <!-- Substitua a URL base do repositório conforme desejar -->
-    <!-- Neste caso: costachambela-rgb/chambteste -->
+  <div class="galeria" id="galeria"></div>
 
-    <!-- Gerado em JS (exemplo abaixo é hardcoded) -->
-    <!-- Abaixo, imagens de 1 a 72 -->
-    <!-- Estas linhas foram geradas automaticamente -->
-    <!-- Início -->
-    
-    <!-- Gera com JS -->
-    <script>
-      const repoEditBase = "https://github.com/costachambela-rgb/chambteste/edit/main/imagem-atual.jpg?filename=";
-      const imageBase = "https://costachambela-rgb.github.io/chambteste/";
-      const container = document.currentScript.parentElement;
+  <script>
+    const galeria = document.getElementById('galeria');
+    const repoEditBase = "https://github.com/costachambela-rgb/chambteste/edit/main/imagem-atual.jpg?filename=";
+    const imageBase = "https://costachambela-rgb.github.io/chambteste/";
 
-      for (let i = 1; i <= 72; i++) {
-        const num = String(i).padStart(2, '0');
-        const imgName = `imagem${num}.jpg`;
+    for (let i = 1; i <= 72; i++) {
+      const num = String(i).padStart(2, '0');
+      const imgName = `imagem${num}.jpg`;
 
-        const a = document.createElement('a');
-        a.className = 'img-btn';
-        a.href = repoEditBase + imgName;
-        a.target = '_blank';
+      const a = document.createElement('a');
+      a.className = 'img-btn';
+      a.href = repoEditBase + imgName;
+      a.target = '_blank';
 
-        const img = document.createElement('img');
-        img.src = imageBase + imgName;
-        img.alt = `Imagem ${num}`;
+      const img = document.createElement('img');
+      img.src = imageBase + imgName;
+      img.alt = `Imagem ${num}`;
 
-        a.appendChild(img);
-        container.querySelector('.galeria').appendChild(a);
-      }
-    </script>
-
-    <!-- Fim -->
-  </div>
+      a.appendChild(img);
+      galeria.appendChild(a);
+    }
+  </script>
 </body>
 </html>
